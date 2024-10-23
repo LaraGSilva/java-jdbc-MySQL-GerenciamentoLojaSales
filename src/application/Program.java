@@ -23,8 +23,8 @@ public class Program {
 		Seller seller2 = sellerDao.findByID(3);
 		System.out.println(seller2);
 		
-		List<Department> seller3 = sellerDao.findByDept(1);
-		System.out.println(seller3);
+//		List<Department> seller3 = sellerDao.findByDept();
+//		System.out.println(seller3);
 	}
 
 }
