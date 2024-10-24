@@ -49,7 +49,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		PreparedStatement pst = null;
 
 		try {
-			pst = conn.prepareStatement("update department set department=? where id=?",
+			pst = conn.prepareStatement("update department set name=? where id=?",
 					java.sql.Statement.RETURN_GENERATED_KEYS);
 
 			pst.setString(1, obj.getName());
@@ -89,7 +89,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		ResultSet rs1 = null;
 
 		try {
-			String sql = "Select d.id, d.department form department d where id=?";
+			String sql = "Select d.id, d.name from department d where id=?";
 			pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
 
@@ -112,7 +112,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		ResultSet rs2 = null;
 
 		try {
-			String sql = "Select d.id, d.department form department d";
+			String sql = "Select d.id, d.name from department as d";
 			pst = conn.prepareStatement(sql);
 			
 			rs2 = pst.executeQuery();
